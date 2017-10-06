@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -22,3 +23,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+=======
+# nambafood
+>>>>>>> 884fc8b97fc4d2ee108ecb76df8cb3af507aec2f
+# nambafood
