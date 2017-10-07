@@ -17,12 +17,12 @@
 
 <p>
   <strong>Restaurant:</strong>
-  <%= @food.restaurant %>
+  <%= @food.restaurant.title %>
 </p>
 
 <p>
   <strong>Order:</strong>
-  <%= @food.order %>
+  <%= @food.order.id %>
 </p>
 
 <%= link_to 'Edit', edit_food_path(@food) %> |

@@ -20,8 +20,8 @@
         <td><%= food.title %></td>
         <td><%= food.price %></td>
         <td><%= food.description %></td>
-        <td><%= food.restaurant %></td>
-        <td><%= food.order %></td>
+        <td><%= food.restaurant.title %></td>
+        <td><%= food.order.id %></td>
         <td><%= link_to 'Show', food %></td>
         <td><%= link_to 'Edit', edit_food_path(food) %></td>
         <td><%= link_to 'Destroy', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
