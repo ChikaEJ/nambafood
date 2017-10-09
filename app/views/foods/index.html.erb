@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Foods</h1>
-
 <table class="table">
   <thead class="thead">
     <tr>
@@ -23,6 +22,22 @@
         <td><%= link_to 'Show', food, class: 'btn btn-default' %></td>
         <td><%= link_to 'Edit', edit_food_path(food), class: 'btn btn-default' %></td>
         <td><%= link_to 'Destroy', food, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+        <td>
+          <%= simple_form_for(@item) do |f| %>
+            <%= f.error_notification %>
+
+            <div class="form-inputs">
+              <%= f.hidden_field :title, value: food.title %>
+              <%= f.hidden_field :price, value: food.price %>
+              <%= f.input :amount, value: 1 %>
+              <%= f.hidden_field :cart_id, value: current_cart.id %>
+            </div>
+
+            <div class="form-actions">
+              <%= f.button :submit, 'Add to cart' %>
+            </div>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

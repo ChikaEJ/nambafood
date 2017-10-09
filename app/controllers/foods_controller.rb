@@ -1,7 +1,13 @@
 class FoodsController < InheritedResources::Base
+  
   def show
-    @cart = Cart.new
+    @item = Item.new
     @food = Food.find(params[:id])
+    #code
+  end
+  def index
+    @foods = Food.all
+    @item = Item.new
     #code
   end
 
