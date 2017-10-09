@@ -2,7 +2,7 @@ ActiveAdmin.register Food do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :title, :restaurant_id, :order_id
+permit_params :title, :price, :description, :restaurant_id
 #
 # or
 #

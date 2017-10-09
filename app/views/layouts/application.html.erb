@@ -9,6 +9,18 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'layouts/navbar' %>
+    <div class="raw">
+      <div class="col-md-9">  <%= yield %> </div>
+      <div class="col-md-3">
+        <h4>In the card</h4>
+        <ol>
+          <li>Coffee</li>
+          <li>Tea</li>
+          <li>Milk</li>
+        </ol>
+      </div>
+    </div>
+
   </body>
 </html>

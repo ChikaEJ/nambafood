@@ -2,8 +2,8 @@
 
 <h1>Restaurants</h1>
 
-<table>
-  <thead>
+<table class="table">
+  <thead class="thead">
     <tr>
       <th>Title</th>
       <th>Picture</th>
@@ -12,15 +12,15 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class="tbody">
     <% @restaurants.each do |restaurant| %>
       <tr>
         <td><%= restaurant.title %></td>
-        <td><%= restaurant.picture %></td>
+        <td><%= image_tag restaurant.picture.thumb.url %></td>
         <td><%= restaurant.description %></td>
-        <td><%= link_to 'Show', restaurant %></td>
-        <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', restaurant, class: 'btn btn-default' %></td>
+        <td><%= link_to 'Edit', edit_restaurant_path(restaurant), class: 'btn btn-default' %></td>
+        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Restaurant', new_restaurant_path %>
+<%= link_to 'New Restaurant', new_restaurant_path, class: 'btn btn-default' %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171006143208) do
+ActiveRecord::Schema.define(version: 20171008112827) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -26,21 +26,29 @@ ActiveRecord::Schema.define(version: 20171006143208) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
   end
 
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "foods", force: :cascade do |t|
     t.string "title"
     t.decimal "price"
     t.text "description"
     t.integer "restaurant_id"
-    t.integer "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["order_id"], name: "index_foods_on_order_id"
     t.index ["restaurant_id"], name: "index_foods_on_restaurant_id"
   end
 
-  create_table "orders", force: :cascade do |t|
+  create_table "items", force: :cascade do |t|
+    t.string "title"
+    t.decimal "price"
+    t.integer "amount"
+    t.integer "cart_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["cart_id"], name: "index_items_on_cart_id"
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -64,6 +72,7 @@ ActiveRecord::Schema.define(version: 20171006143208) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
