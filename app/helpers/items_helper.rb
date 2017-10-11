@@ -1,6 +1,12 @@
 module ItemsHelper
   def items
-    Item.all
+    cart = Cart.last
+    items = cart.items
+    return items
+    #code
+  end
+  def new_item
+    Item.new
     #code
   end
 

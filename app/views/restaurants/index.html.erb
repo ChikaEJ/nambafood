@@ -2,29 +2,20 @@
 
 <h1>Restaurants</h1>
 
-<table class="table">
-  <thead class="thead">
-    <tr>
-      <th>Title</th>
-      <th>Picture</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody class="tbody">
+<div class="container">
+  <div class="row">
     <% @restaurants.each do |restaurant| %>
-      <tr>
-        <td><%= restaurant.title %></td>
-        <td><%= image_tag restaurant.picture.thumb.url %></td>
-        <td><%= restaurant.description %></td>
-        <td><%= link_to 'Show', restaurant, class: 'btn btn-default' %></td>
-        <td><%= link_to 'Edit', edit_restaurant_path(restaurant), class: 'btn btn-default' %></td>
-        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
-      </tr>
+    <div class="col-md-3">
+      <h3><%= restaurant.title %></h3> <br>
+      <%=  link_to (image_tag restaurant.picture.thumb.url), restaurant %> <br>
+      <%= restaurant.description %> <br>
+      <%= link_to 'Edit', edit_restaurant_path(restaurant), class: 'btn btn-default' %>
+      <%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %> <br>
+    </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</div>
 
 <br>
 

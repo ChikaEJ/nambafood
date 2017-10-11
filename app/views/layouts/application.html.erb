@@ -23,6 +23,11 @@
           </li>
         <% end %>
         </ol>
+          <% if current_cart.items.count == 0 %>
+            <%= "Cart is empty!" %>
+          <% else %>
+            <%= render 'carts/form' %>
+          <% end %>
       </div>
     </div>
 

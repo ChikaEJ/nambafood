@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   require 'items_helper'
 
 
+
  protected
 
  def configure_permitted_parameters

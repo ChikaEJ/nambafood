@@ -6,13 +6,34 @@
 </p>
 
 <p>
-  <%= image_tag @restaurant.picture.thumb.url %>
+  <%= image_tag @restaurant.picture.large.url %>
 </p>
 
 <p>
   <strong>Description:</strong>
   <%= @restaurant.description %>
 </p>
+
+<ol>
+  <% @restaurant.foods.each do |food| %>
+  <li>
+    <%= food.title %> ||
+    <%= food.price %> сом
+    <%= simple_form_for(new_item) do |f| %>
+      <%= f.error_notification %>
+
+        <%= f.hidden_field :title, value: food.title %>
+        <%= f.hidden_field :price, value: food.price %>
+        <%= f.input :amount, value: 1 %>
+        <%= f.hidden_field :cart_id, value: current_cart.id %>
+
+      <div class="form-actions">
+        <%= f.button :submit, 'Add to cart' %>
+      </div>
+    <% end %>
+  </li>
+  <% end %>
+</ol>
 
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>

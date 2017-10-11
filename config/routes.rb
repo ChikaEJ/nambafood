@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :items
   resources :carts
-  root 'foods#index'
+  root 'restaurants#index'
   resources :foods
   resources :restaurants
   devise_for :users

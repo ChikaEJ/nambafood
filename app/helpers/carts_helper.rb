@@ -3,4 +3,7 @@ module CartsHelper
     Cart.last
     #code
   end
+  def cart_new
+    @cart = Cart.new
+  end
 end

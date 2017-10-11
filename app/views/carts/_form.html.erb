@@ -1,10 +1,11 @@
-<%= simple_form_for(@cart) do |f| %>
+<%= simple_form_for(cart_new) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.hidden_field :satus, value: "on" %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, 'Make order' %>
   </div>
 <% end %>
